@@ -66,10 +66,10 @@ namespace ProjetoAutomacaoCSharp.StepDefinitions
             // driver?.FindElement(By.Id("licenseplatenumber")).SendKeys("hdg389333L");
 
             // driver?.FindElement(By.Id("annualmileage")).SendKeys("80000");
-            EnterVehicleData.MarcaEModelo();
-            EnterVehicleData.PreencheCamposDoFormulario();
-            EnterVehicleData.SeleconaHardDriver();
-            EnterVehicleData.PreencheCamposRestatntesDoFormulario();
+            EnterVehicleData.MarcaEModelo("Audi", "Scooter");
+            EnterVehicleData.PreencheCamposDoFormulario("1000", "1700", "10/10/2020", "1");
+            EnterVehicleData.SelecionaHardDriver();
+            EnterVehicleData.PreencheCamposRestantesDoFormulario("1", "Diesel", "20", "30000", "5000", "hdg389333L", "80000");
         }
 
         [Then(@"o sistema deve aceitar o envio com sucesso")]
