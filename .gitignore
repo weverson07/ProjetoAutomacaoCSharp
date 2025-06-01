@@ -1,0 +1,48 @@
+# Build results
+#[Bb]in/
+[Oo]bj/
+TestResults/
+.vscode/
+*.user
+*.suo
+*.cache
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+*.orig
+*.dbmdl
+*.pdb
+
+# Visual Studio
+.vs/
+
+# Rider
+.idea/
+
+# NUnit test result files
+*.trx
+*.xml
+
+# SpecFlow generated files
+GeneratedFiles/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+# Config files
+appsettings.*.json
+
+# Logs
+*.log
+
+# Others
+*.sqlite
+*.bak
+*.swp
