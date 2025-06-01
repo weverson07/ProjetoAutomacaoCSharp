@@ -1,4 +1,4 @@
-name: Build and Test C# with SpecFlow
+name: Build and Test
 
 on:
   push:
@@ -7,30 +7,23 @@ on:
     branches: [ master, main ]
 
 jobs:
-  build-and-test:
-    runs-on: windows-latest
+  build:
+    runs-on: windows-2022
 
     steps:
-      - name: 🔄 Checkout do código
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: 🧰 Instalação do .NET SDK
+      - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x'  # ou 7.0.x ou 8.0.x conforme seu projeto
+          dotnet-version: '6.0.x'
 
-      - name: 📦 Restaurar dependências
+      - name: Restore
         run: dotnet restore
 
-      - name: 🛠️ Build do projeto
-        run: dotnet build --no-restore --configuration Release
+      - name: Build
+        run: dotnet build --no-restore
 
-      - name: 🧪 Executar testes
-        run: dotnet test --no-build --configuration Release --logger "trx"
-
-      - name: 📤 Publicar resultados de teste
-        if: success() || failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: TestResults
-          path: '**/TestResults/*.trx'
+      - name: Test
+        run: dotnet test --no-build
