@@ -157,3 +157,19 @@ dotnet reportgenerator [options]
 ## Additional information
 - [Get started](https://reportgenerator.io/getstarted)
 - [Command line parameters](https://reportgenerator.io/usage)
+
+
+## PASSOS PARA EXECUTAR OS TESTES COM COBERTURA E RELATÓRIO HTML ##
+
+1. Certifique-se de que seu projeto de testes tem este pacote:
+   dotnet add package coverlet.collector
+
+2. Coloque este arquivo BAT na raiz do seu projeto (ao lado do .csproj)
+
+3. Execute no terminal (CMD ou PowerShell):
+   run_tests_with_coverage.bat
+
+Isso vai:
+- Rodar os testes
+- Coletar cobertura de código
+- Gerar um relatório HTML em: coverage-report/index.html
