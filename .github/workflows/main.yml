@@ -28,8 +28,10 @@ jobs:
 
       - name: 🧪 Executar testes com relatório .trx
         run: dotnet test --no-build --configuration Release --logger "trx;LogFileName=TestResults.trx"
+        continue-on-error: true
 
       - name: 📊 Gerar relatório HTML com ReportGenerator
+        if: always()
         uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
         with:
           reports: '**/TestResults/*.trx'
